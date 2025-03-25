@@ -1,4 +1,3 @@
-
   /* Efecto hover en los links del navbar */
   .nav-link {
     position: relative;
@@ -260,6 +259,9 @@
   }
 
   .img-hover img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.4s ease, filter 0.4s ease;
   }
 
@@ -273,10 +275,6 @@
   /* Efecto de transición suave en la imagen */
   .img-hover img {
     transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
-  }
-  .about-card img {
-    width: 80%;  /* Hacer que la imagen ocupe todo el ancho del contenedor */
-    height: auto; /* Mantener la proporción de la imagen */
   }
 
   /* Estilo de las tarjetas */
@@ -406,4 +404,10 @@
       color: #FFD700; /* Amarillo dorado */
     }
 
+    @media (max-width: 767px) {
+      .img-hover img {
+        width: 80%;  /* Ajuste del tamaño en pantallas pequeñas */
+        margin: 0 auto; /* Centrar la imagen */
+      }
+    }
     
