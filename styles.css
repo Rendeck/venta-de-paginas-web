@@ -1,413 +1,445 @@
-  /* Efecto hover en los links del navbar */
-  .nav-link {
-    position: relative;
-    color: white !important;
-    transition: color 0.3s;
-  }
+/* Efecto hover en los links del navbar */
+.nav-link {
+  position: relative;
+  color: white !important;
+  transition: color 0.3s;
+}
 
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    left: 0;
-    bottom: 0;
-    background-color: #ffc107;
-    transition: width 0.3s;
-  }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #ffc107;
+  transition: width 0.3s;
+}
 
-  .nav-link:hover::after {
-    width: 100%;
-  }
+.nav-link:hover::after {
+  width: 100%;
+}
 
-  .nav-link:hover {
-    color: #ffc107 !important;
-  }
+.nav-link:hover {
+  color: #ffc107 !important;
+}
 
-  /* Navbar fondo */
-  .navbar {
-    background-color: #343a40;
-  }
-  html {
-    scroll-behavior: smooth;
-  }
+/* Navbar fondo */
+.navbar {
+  background-color: #343a40;
+}
+html {
+  scroll-behavior: smooth;
+}
 
-  .hero {
-    background-image: url('https://cdn-3.expansion.mx/dims4/default/1e35735/2147483647/strip/true/crop/1253x836+0+0/resize/1800x1201!/format/webp/quality/80/?url=https%3A%2F%2Fcdn-3.expansion.mx%2Fa5%2F48%2F18cf9bfc42fd9b9afe9539c4097e%2Faplicacion-de-la-inteligencia-artificial-para-el-financiamiento-automotriz.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgb(255, 255, 255);
-    text-align: center;
-  }
+.hero {
+  background-image: url("https://cdn-3.expansion.mx/dims4/default/1e35735/2147483647/strip/true/crop/1253x836+0+0/resize/1800x1201!/format/webp/quality/80/?url=https%3A%2F%2Fcdn-3.expansion.mx%2Fa5%2F48%2F18cf9bfc42fd9b9afe9539c4097e%2Faplicacion-de-la-inteligencia-artificial-para-el-financiamiento-automotriz.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    top: 0;
-    left: 0;
-  }
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+}
 
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    animation: fadeIn 2s ease forwards;
-    opacity: 0;
-  }
+.hero-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
 
-  .hero h1 {
-    font-size: 4rem;
-    text-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107, 0 0 30px #ffc107;
-    animation: neon 2s infinite alternate;
-  }
+.hero h1 {
+  font-size: 4rem;
+  text-shadow: 0 0 10px #ffc107, 0 0 20px #ffc107, 0 0 30px #ffc107;
+  animation: neon 2s infinite alternate;
+}
 
-  .hero h2 {
-    font-size: 1.5rem;
-    margin-top: 20px;
-    text-shadow: 0 0 5px #111cb4;
-  }
+.hero h2 {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  text-shadow: 0 0 5px #111cb4;
+}
 
-  /* Animación de aparición */
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
+/* Animación de aparición */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
+}
 
-  /* Animación de "neón" */
-  @keyframes neon {
-    from {
-      text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107;
-    }
-    to {
-      text-shadow: 0 0 20px #ffc107, 0 0 40px #ffc107;
-    }
+/* Animación de "neón" */
+@keyframes neon {
+  from {
+    text-shadow: 0 0 5px #ffc107, 0 0 10px #ffc107;
   }
+  to {
+    text-shadow: 0 0 20px #ffc107, 0 0 40px #ffc107;
+  }
+}
 
-/* Animación FadeUp */
+/* Efecto general de las cards */
 .service-card {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeUp 1s forwards;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+/* SERVICIOS*/
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #0d6efd, #6610f2, #20c997, #fd7e14);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  z-index: 1;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
   }
-
-  .service-card:nth-child(1) { animation-delay: 0.3s; }
-  .service-card:nth-child(2) { animation-delay: 0.6s; }
-  .service-card:nth-child(3) { animation-delay: 0.9s; }
-
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  50% {
+    background-position: 100% 50%;
   }
-
-  /* Hover Profesional */
-  .service-card {
-    transition: all 0.5s ease;
-    border: 2px solid transparent;
+  100% {
+    background-position: 0% 50%;
   }
+}
 
-  .service-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-    border-color: #ffc107;
-    background-color: #ffffff;
+/* Contenedor encima */
+#servicios .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Título */
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #fff;
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 10px;
+}
+
+/* Card efecto vidrio */
+.service-card-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.service-card-glass:hover {
+  transform: translateY(-12px) rotate3d(1, 1, 0, 6deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Iconos */
+.icon-animate {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
   }
-
-  /* Icono con efecto */
-  .icon-effect {
-    transition: transform 0.4s ease, color 0.4s ease;
+  50% {
+    transform: scale(1.15);
   }
+}
 
-  .service-card:hover .icon-effect {
-    transform: scale(1.3) rotate(-5deg);
-    color: #0d6efd;
+/* Gradientes de íconos */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+}
+.bg-gradient-success {
+  background: linear-gradient(135deg, #198754, #20c997);
+}
+.bg-gradient-warning {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+}
+.img-hover {
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  /* Sombra para darle profundidad */
+}
+
+.img-hover img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.4s ease, filter 0.4s ease;
+}
+
+/* Efecto Hover - Escala y Rotación */
+.img-hover:hover img {
+  transform: scale(1.1) rotate(5deg); /* Aumenta el tamaño y rota ligeramente */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Agrega sombra al hacer hover */
+  filter: brightness(1.2); /* Aumenta el brillo de la imagen */
+}
+
+/* Efecto de transición suave en la imagen */
+.img-hover img {
+  transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Estilo de las tarjetas */
+/* Fondo animado */
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #0d6efd, #6610f2, #20c997, #fd7e14);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  z-index: 1;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
   }
-
-  /* Texto */
-  .service-card h5 {
-    color: #222;
+  50% {
+    background-position: 100% 50%;
   }
-
-  .service-card p {
-    color: #555;
-    font-size: 1rem;
+  100% {
+    background-position: 0% 50%;
   }
+}
 
-  .package-card {
-    transition: all 0.5s ease;
-    border: 2px solid transparent;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeUp 1s forwards;
+/* Contenedor encima */
+#paquetes .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Título */
+.section-title::after {
+  content: "";
+  width: 90px;
+  height: 4px;
+  background: #fff;
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 10px;
+}
+
+/* Tarjetas */
+.package-card-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.package-card-glass:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.2);
+}
+/*NOSOTROS*/
+/* Fondo degradado animado */
+.gradient-bg {
+  background: linear-gradient(-45deg, #0d6efd, #6610f2, #6f42c1, #20c997);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
   }
-
-  .package-card:nth-child(1) { animation-delay: 0.2s; }
-  .package-card:nth-child(2) { animation-delay: 0.4s; }
-  .package-card:nth-child(3) { animation-delay: 0.6s; }
-
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  50% {
+    background-position: 100% 50%;
   }
-
-  .package-card:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
-    border-color: #0d6efd;
+  100% {
+    background-position: 0% 50%;
   }
+}
 
-  .package-card h5 {
-    font-size: 1.5rem;
-    color: #333;
-  }
-
-  .package-card h3 {
-    font-size: 2rem;
-  }
-
-  .package-card ul li {
-    padding: 8px 0;
-    color: #555;
-    font-size: 1rem;
-  }
-
-  .package-card button {
-    transition: all 0.3s ease;
-  }
-
-  .package-card button:hover {
-    transform: scale(1.1);
-  }
-
- /* Animación Fade Up para tarjetas */
- .fade-up {
-    opacity: 0;
-    transform: translateY(50px);
-    animation: fadeUp 1s forwards;
-  }
-
-  .fade-up:nth-child(1) { animation-delay: 0.3s; }
-  .fade-up:nth-child(2) { animation-delay: 0.6s; }
-  .fade-up:nth-child(3) { animation-delay: 0.9s; }
-
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Estilo de las tarjetas */
-  .about-card {
-    transition: all 0.4s ease;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  .about-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-    border: 2px solid #0d6efd;
-  }
-
-  /* Efecto Hover en Iconos */
-  .icon-hover {
-    font-size: 3.5rem;
-    color: #444;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-/* Animación Fade Up para tarjetas */
+/* Animaciones */
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
 .fade-up {
+  animation: fadeUp 1.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    transform: translateY(50px);
-    animation: fadeUp 1s forwards;
+    transform: translateY(20px);
   }
-
-  .fade-up:nth-child(1) { animation-delay: 0.3s; }
-  .fade-up:nth-child(2) { animation-delay: 0.6s; }
-  .fade-up:nth-child(3) { animation-delay: 0.9s; }
-
-  @keyframes fadeUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-
-  /* Efecto Hover en la Imagen: */
-  .img-hover {
-    overflow: hidden;
-    border-radius: 10px;
-    position: relative;
-    /* Sombra para darle profundidad */
-  }
-
-  .img-hover img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.4s ease, filter 0.4s ease;
-  }
-
-  /* Efecto Hover - Escala y Rotación */
-  .img-hover:hover img {
-    transform: scale(1.1) rotate(5deg);  /* Aumenta el tamaño y rota ligeramente */
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); /* Agrega sombra al hacer hover */
-    filter: brightness(1.2);  /* Aumenta el brillo de la imagen */
-  }
-
-  /* Efecto de transición suave en la imagen */
-  .img-hover img {
-    transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
-  }
-
-  /* Estilo de las tarjetas */
-  .about-card {
-    transition: all 0.4s ease;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    text-align: center;
-    margin-top: 95px;
-  }
-
-  .about-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-    border: 2px solid #0d6efd;
-  }
-
-  /* Efecto Hover en Iconos */
-  .icon-hover {
-    font-size: 3.5rem;
-    color: #444;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-
-  .about-card:hover .icon-hover {
-    transform: scale(1.3);
-    color: #0d6efd;
-  }
-
-  /* Títulos */
-  h5 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-top: 20px;
-  }
-
-  /* Descripción */
-  p {
-    font-size: 1rem;
-    color: #555;
-  }
-
-  /* Estilo para la animación de fade-in del título */
-  .fade-in {
+}
+@keyframes fadeUp {
+  from {
     opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1s forwards;
+    transform: translateY(40px);
   }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
+}
 
-     /* Estilos del botón y chat flotante */
-     .whatsapp-container {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 999;
-    }
+/* Card con efecto */
+.about-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
 
-    .whatsapp-btn {
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
+/* Glow en hover */
+.hover-glow:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
 
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
-    }
+/* Icono dentro de círculo */
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 2rem;
+  transition: background 0.3s;
+}
+.icon-circle i {
+  color: #fff;
+}
+.icon-circle:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
 
-    .chat-box {
-      width: 300px;
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      margin-bottom: 10px;
-    }
+/* Imagen con efecto zoom */
+.img-hover img {
+  transition: transform 0.5s ease;
+}
+.img-hover img:hover {
+  transform: scale(1.08);
+}
 
-    .chat-header {
-      background-color: #25D366;
-      color: #fff;
-      padding: 10px;
-      font-weight: bold;
-    }
+/* Texto destacado */
+.highlight {
+  color: #ffc107;
+  font-weight: 600;
+}
+/*FOOTER./
+/* BOTÓN FLOTANTE WHATSAPP */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  background: #25d366;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  animation: pulse 1.5s infinite;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.whatsapp-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* FOOTER CON DEGRADADO ANIMADO */
+.footer {
+  background: linear-gradient(-45deg, #0d6efd, #6610f2, #6f42c1, #20c997);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  color: #fff;
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-    .chat-body {
-      padding: 10px;
-      background-color: #f4f4f4;
-      font-size: 14px;
-    }
+/* LINKS FOOTER */
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+.footer-link:hover {
+  color: #ffc107;
+  transform: translateY(-3px);
+}
 
-    .chat-footer {
-      display: flex;
-      border-top: 1px solid #ddd;
-    }
+/* ICONOS REDES */
+.social-icons a {
+  font-size: 1.5rem;
+  margin: 0 8px;
+  color: #fff;
+  transition: transform 0.3s, color 0.3s;
+}
+.social-icons a:hover {
+  transform: scale(1.3);
+  color: #ffc107;
+}
 
-    .chat-footer input {
-      flex: 1;
-      padding: 10px;
-      border: none;
-    }
-
-    .chat-footer button {
-      background-color: #25D366;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      cursor: pointer;
-    }
-
-    .footer-link {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-  
-    .footer-link:hover {
-      color: #FFD700; /* Amarillo dorado */
-    }
-
-    @media (max-width: 767px) {
-      .img-hover img {
-        width: 80%;  /* Ajuste del tamaño en pantallas pequeñas */
-        margin: 0 auto; /* Centrar la imagen */
-      }
-    }
-    
+/* LOGO CON GLOW */
+.logo-glow {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.7), 0 0 30px #ffc107;
+}
